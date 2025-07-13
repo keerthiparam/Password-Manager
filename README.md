@@ -1,55 +1,86 @@
-# 🧹 Dust-Buster
+# 🔐 Password Manager
 
-**Dust-Buster** is a hardware prototype developed for the **Science Day Project Expo** at **R.M.D. Engineering College**. The project was created by a team of four first-year students — **Joshni, Kiruthika, Lakshmi, and Keerthi** — to address common classroom cleanliness issues using simple electronics and innovation.
-
-Our idea began with designing a 3D-printed chalk box, inspired by the lack of them in our college. This evolved into an automated dust detection system aimed at contributing to **UN Sustainable Development Goal 9: Industry, Innovation, and Infrastructure**.
-
-While we didn’t win the competition, we were proud to be one of the **finalist teams**.
+A simple, terminal-based password manager built using **Python** and **MySQL**. This project lets users securely store, view, and manage login credentials (username, password, and associated website). Designed as a beginner-level project to demonstrate database handling and basic CRUD operations.
 
 ---
 
-## 🌱 Project Overview
+## 📦 Features
 
-The Dust-Buster detects dust or particles inside a chalk box using an ultrasonic sensor. If dust is detected within a certain range, it triggers an alert via a buzzer, signaling that cleaning is needed. This system encourages better maintenance of classroom resources and supports sustainability in everyday infrastructure.
-
----
-
-## 🧠 Tech Stack
-
-- Arduino (C++)
-- Ultrasonic Sensor
-- Buzzer
-- Breadboard & Jumper Wires
-- Power Supply Module
-- Basic Electronic Components
+- ✅ Add new login credentials
+- 📋 View all saved credentials
+- 🔍 Search credentials by username
+- ❌ Delete specific entries
+- 🧹 Clear the entire password database
+- 🛠️ Error handling for invalid inputs
 
 ---
 
-## 📦 Future Improvements
+## 🛠️ Tech Stack
 
-- Add an LCD or OLED screen to show distance and dust level
-- Upgrade to a particle sensor for more accurate dust detection
-- Miniaturize the design with a custom PCB
-- Enable wireless alerts (via Bluetooth or Wi-Fi)
-- Integrate with a mobile app or classroom dashboard
+- **Python 3**
+- **MySQL Connector for Python**
+- **MySQL Database**
 
 ---
 
-## 🖼️ Photos
+## 🗃️ Table Structure
 
-![IMG_20240405_143419](https://github.com/user-attachments/assets/d12b23bb-402b-44a1-8fc5-83cbdad6c84b)
-![IMG_20240405_140142](https://github.com/user-attachments/assets/428eea78-35ae-4535-9383-63b051e1bba4)
-![IMG_20240405_142941](https://github.com/user-attachments/assets/96d6dac4-1456-42c7-8b70-ba94e1f6f7ef)
-<img width="2458" height="348" alt="Screenshot 2024-04-05 143649" src="https://github.com/user-attachments/assets/ad4669b5-133f-462e-9468-53795db3a086" />
-<img width="1413" height="889" alt="Screenshot 2024-04-05 143659" src="https://github.com/user-attachments/assets/a139226b-1e75-420e-84c4-bed1ff5d087f" />
+Database: `sam`  
+Table: `password_manager`
 
+| Column   | Type         | Constraints      |
+|----------|--------------|------------------|
+| Username | VARCHAR(100) | NOT NULL         |
+| Password | VARCHAR(100) | NOT NULL         |
+| Website  | VARCHAR(150) | NOT NULL         |
 
 ---
 
-## 🤝 Team Members
+## 🚀 Getting Started
 
-- [Joshni](https://github.com/Joshni86)
-- **Kiruthika**
-- [Lakshmi](https://github.com/lakshmisri4)
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/yourusername/Password-Manager.git
+cd Password-Manager
+```
+
+### 2. Set Up MySQL
+
+- Create a database named ```sam```
+
+- Ensure your MySQL root user has username ```root``` and password ```root```
+
+- You can change these credentials in the script if needed
+
+### 3. Install Requirements
+
+```pip install mysql-connector-python```
+
+### 4. Run the Script
+
+``` python password_manager.py ```
+
+### 💡 Usage
+
+When you run the script, a simple menu will appear:
+
+```Welcome to password manager :)
+
+Press 1 to add your details
+Press 2 to display all your details
+Press 3 to view particular details
+Press 4 to delete particular details
+Press 5 to clear all details
+Press 6 to exit password manager
+```
+
+Input the number corresponding to the action you'd like to perform.
+
+### 🧑‍💻 Author
+
+[@keerthiparam](https://www.github.com/keerthiparam)
+
+Note: This is a learning project and should not be used to store real passwords without encryption and security best practices.
 
 ---
